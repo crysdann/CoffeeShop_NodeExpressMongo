@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%-include("layouts/header");-%>
+  <body>
+    <header>
+      <h1 class="site-heading text-center text-faded d-none d-lg-block">
+        <span class="site-heading-upper text-primary mb-3">coffee delight</span>
+        <span class="site-heading-lower">A Joyful Brew</span>
+      </h1>
+    </header>
+    <!-- Navigation-->
+    <%-include("layouts/navbar");-%>
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner bg-faded text-center rounded">
+              <h2 class="section-heading mb-5">
+                <span class="section-heading-upper">Login page</span>
+              </h2>
+              <form action="/userlogin" method="POST">
+                <div class="control-group">
+                  <div class="form-group floating-label-form-group controls">
+                    <label>Username</label>
+                    <input
+                      type="text"
+                      placeholder="Username"
+                      class="form-control"
+                      id="loginusername"
+                      name="loginusername" /><span
+                      id="spanloginusername"></span>
+                  </div>
+                </div>
+                <br />
+                <div class="control-group">
+                  <div class="form-group floating-label-form-group controls">
+                    <label>Password</label>
+                    <input
+                      type="password"
+                      placeholder="Password"
+                      class="form-control"
+                      id="loginpassword"
+                      name="loginpassword" /><span
+                      id="spanloginpassword"></span>
+                  </div>
+                </div>
+                <br />
+                <div class="control-group">
+                  <div class="form-group floating-label-form-group controls">
+                    <button type="submit" id="login" class="btn btn-primary">
+                      Login
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="page-section about-heading">
+      <div class="container">
+        <img
+          class="img-fluid rounded about-heading-img mb-3 mb-lg-0"
+          src="assets/img/login.avif"
+          alt="..." />
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-4">
+                  <span class="section-heading-upper"
+                    >Strong Coffee, Strong Roots</span
+                  >
+                  <span class="section-heading-lower"
+                    >Sign In to Your Coffee Oasis</span
+                  >
+                </h2>
+                <p>
+                  Welcome to our coffee website's login page! Access your
+                  account with ease to explore exclusive offers, track orders,
+                  and manage your preferences. Enjoy a seamless login experience
+                  as you dive into a world of premium coffee delights. Join us
+                  now to elevate your coffee journey!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%-include("layouts/footer");-%> <%-include("layouts/scripts");-%>
+  </body>
+</html>

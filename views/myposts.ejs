@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%-include("layouts/header");-%>
+  <body>
+    <header>
+      <h1 class="site-heading text-center text-faded d-none d-lg-block">
+        <span class="site-heading-upper text-primary mb-3">coffee delight</span>
+        <span class="site-heading-lower">A Joyful Brew</span>
+      </h1>
+    </header>
+    <!-- Navigation-->
+    <%-include("layouts/navbar");-%>
+
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner bg-faded text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper"
+                  >My Posts</span
+                >
+                <span class="section-heading-lower">What have I posted so far...</span>
+              </h2>
+              <div>
+                <% if(listofposts.length != 0){ %> 
+                    <% for(let i = 0 ; i <listofposts.length ; i++) { %>
+                <div class="post-preview">
+                  <h2 class="post-title"><%= listofposts[i].title %></h2>
+                  <h4 class="post-subtitle">
+                    <%= listofposts[i].description %>
+                  </h4>
+                  <!-- <p>           
+                    Posted by <A href="#"><%= listofposts[i].username %></A>
+                  </p> -->
+                  on <%= listofposts[i].postedDate.toLocaleString() %>
+                </div>
+                <hr />
+                <% } %> 
+                <% } else{%>
+                    <p>No posts available</p>
+                <% } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%-include("layouts/footer");-%> <%-include("layouts/scripts");-%>
+  </body>
+</html>
