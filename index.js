@@ -31,7 +31,8 @@ app.use("*", (req, res, next) => {
 });
 
 // MongoDB connection
-const conString = "";
+const conString =
+  "mongodb+srv://talesfaraway:1234@cluster0.jhpqbjr.mongodb.net/";
 try {
   const connection = mongoose.connect(conString);
   console.log("Successfully connected to Mongo DB" + connection);
