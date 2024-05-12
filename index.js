@@ -93,7 +93,7 @@ app.get("/auth/logout", logoutController);
 
 // initiate server
 
-const PORT = PROCESS.ENV.PORT || 4000;
+const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
   console.log("App is listening on port 4000");
