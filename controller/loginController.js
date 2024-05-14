@@ -2,14 +2,27 @@ const registrationModel = require("../models/UserRegistration");
 const bcrypt = require("bcrypt");
 
 const getloginController = (req, res) => {
-  res.render("login");
+  res.render("login", { errors: {} });
 };
 
 const createLoginController = async (req, res) => {
+  const { loginusername, loginpassword } = req.body;
+  let errors = {};
+
+  if (!loginusername) {
+    errors.loginusernameerror = "User name is required";
+  }
+  if (!loginpassword) {
+    errors.loginpassworderror = "Password is required";
+  }
+
+  if (Object.keys(errors).length > 0) {
+    return res.render("login", { errors });
+  }
+
   try {
-    const { loginusername, loginpassword } = req.body;
     const user = await registrationModel.findOne({ username: loginusername });
-    console.log(user);
+
     if (user) {
       const match = await bcrypt.compare(loginpassword, user.password);
       console.log(match);

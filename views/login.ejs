@@ -28,7 +28,11 @@
                       class="form-control"
                       id="loginusername"
                       name="loginusername" /><span
-                      id="spanloginusername"></span>
+                      class="text-danger"
+                      id="spanloginusernameerror"
+                      ><%= errors.loginusernameerror?
+                      errors.loginusernameerror:'' %></span
+                    >
                   </div>
                 </div>
                 <br />
@@ -41,7 +45,11 @@
                       class="form-control"
                       id="loginpassword"
                       name="loginpassword" /><span
-                      id="spanloginpassword"></span>
+                      class="text-danger"
+                      id="spanloginpassworderror"
+                      ><%= errors.loginpassworderror?
+                      errors.loginpassworderror:'' %></span
+                    >
                   </div>
                 </div>
                 <br />
