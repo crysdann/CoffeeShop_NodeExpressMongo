@@ -27,7 +27,12 @@
                       placeholder="Username"
                       class="form-control"
                       id="regusername"
-                      name="regusername" /><span id="spanregusername"></span>
+                      name="regusername" /><span
+                      id="spanregusername"
+                      class="text-danger"
+                      ><%= errors.usernameerror? errors.usernameerror:''
+                      %></span
+                    >
                   </div>
                 </div>
                 <br />
@@ -39,7 +44,32 @@
                       placeholder="Password"
                       class="form-control"
                       id="regpassword"
-                      name="regpassword" /><span id="spanregpassword"></span>
+                      name="regpassword" /><span
+                      id="spanregpassword"
+                      class="text-danger"
+                      ><%= errors.passworderror? errors.passworderror:''
+                      %></span
+                    >
+                  </div>
+                </div>
+                <br />
+                <div class="control-group">
+                  <div class="form-group floating-label-form-group controls">
+                    <label>Confirm Password</label>
+                    <input
+                      type="password"
+                      placeholder="Confirm Password"
+                      class="form-control"
+                      id="regconfirmpassword"
+                      name="regconfirmpassword" />
+                    <span id="regconfirmpassword" class="text-danger"
+                      ><%= errors.confirmPassworderror ?
+                      errors.confirmPassworderror : '' %></span
+                    >
+                    <span id="passwordmismatch" class="text-danger"
+                      ><%= errors.passwordMismatch ? errors.passwordMismatch :
+                      '' %></span
+                    >
                   </div>
                 </div>
                 <br />
